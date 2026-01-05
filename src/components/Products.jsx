@@ -53,10 +53,15 @@ const Products = () => {
     },
   ];
   return (
-    <div className="my-32">
-      {productData.map((product) => (
-        <Product val={product} />
+    <div className="my-32 relative">
+      {productData.map((product, index) => (
+        <Product key={index} val={product} />
       ))}
+      <div className="absolute top-0 w-full h-full pointer-events-none ">
+        <div className="absolute w-[25rem] h-[15rem]  left-[35%] bg-amber-500">
+          <div className="w-full h-full bg-sky-100 absolute ]"></div>
+        </div>
+      </div>
     </div>
   );
 };
