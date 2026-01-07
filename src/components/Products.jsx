@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Product from "./Product";
+import { motion } from "framer-motion";
 
 const Products = () => {
   var productData = [
@@ -7,7 +8,7 @@ const Products = () => {
       id: 1,
       title: "CloudSync",
       description:
-        "Experience crystal-clear audio with our latest wireless earbuds featuring active noise cancellation and 32-hour battery life. The ergonomic design ensures all-day comfort, while touch controls let you manage calls and music effortlessly. Water-resistant and equipped with premium drivers, these earbuds deliver studio-quality sound whether you're commuting, working out, or relaxing at home.",
+        "Experience crystal-clear audio with our latest wireless earbuds featuring active noise cancellation and 32-hour battery life. The ergonomic design ensures all-day comfort, while touch controls let you manage calls and music effortlessly.",
       live: true,
       case: false,
     },
@@ -15,7 +16,7 @@ const Products = () => {
       id: 2,
       title: "ErgoLux ",
       description:
-        "Transform any workspace into an ergonomic powerhouse with this adjustable standing desk converter. Featuring a smooth gas-spring lift mechanism, it transitions seamlessly between sitting and standing positions in seconds. The spacious dual-tier design accommodates monitors up to 32 inches and includes a dedicated keyboard tray. Built from premium steel with a scratch-resistant surface, it supports up to 35 pounds while promoting better posture and increased productivity.",
+        "Transform any workspace into an ergonomic powerhouse with this adjustable standing desk converter. Featuring a smooth gas-spring lift mechanism, it transitions seamlessly between sitting and standing positions in seconds.",
       live: true,
       case: false,
     },
@@ -23,7 +24,7 @@ const Products = () => {
       id: 3,
       title: "PureGlow",
       description:
-        "Illuminate your beauty routine with this Hollywood-style vanity mirror featuring adjustable LED lighting in three color modes. The 10X magnification spot mirror ensures flawless makeup application, while the 360-degree rotation lets you find the perfect angle. Touch-sensitive controls adjust brightness levels, and the rechargeable battery provides up to 5 hours of cordless use. Perfect for makeup artists, beauty enthusiasts, and anyone seeking professional-quality lighting.",
+        "Illuminate your beauty routine with this Hollywood-style vanity mirror featuring adjustable LED lighting in three color modes. The 10X magnification spot mirror ensures flawless makeup application.",
       live: true,
       case: true,
     },
@@ -31,36 +32,50 @@ const Products = () => {
       id: 4,
       title: "AeroFit",
       description:
-        "Monitor your health journey with precision using this advanced fitness tracker that goes beyond step counting. Track heart rate, blood oxygen levels, sleep quality, and 20+ workout modes with medical-grade accuracy. The vibrant AMOLED display remains visible in bright sunlight, while 7-day battery life keeps you connected without constant charging. Water-resistant to 50 meters and compatible with iOS and Android, it's your personal health companion for every adventure.",
-      live: true,
-      case: true,
-    },
-    {
-      id: 5,
-      title: "BrewMaster",
-      description:
-        "Craft café-quality beverages at home with this programmable coffee maker featuring precision temperature control and a built-in burr grinder. The thermal carafe keeps coffee hot for hours without a heating plate that ruins flavor. Customize brew strength, schedule your morning cup up to 24 hours in advance, and enjoy the convenience of a 12-cup capacity. Self-cleaning function and dishwasher-safe components make maintenance effortless.",
-      live: true,
-      case: false,
-    },
-    {
-      id: 6,
-      title: "ZenNest",
-      description:
-        "Discover deeper, more restful sleep with this premium weighted blanket designed using deep pressure therapy principles. Filled with non-toxic glass beads evenly distributed in small pockets, it provides gentle, consistent pressure that reduces anxiety and promotes relaxation. The breathable cotton cover is removable and machine washable, while the blanket itself comes in multiple weights to suit your preference. Available in sizes from twin to king for ultimate comfort.",
+        "Monitor your health journey with precision using this advanced fitness tracker that goes beyond step counting. Track heart rate, blood oxygen levels, sleep quality, and 20+ workout modes with medical-grade accuracy.",
       live: true,
       case: true,
     },
   ];
+
+  const [pos, setPos] = useState(0);
+  const mover = (val) => {
+    setPos(val * 20);
+  };
+
   return (
     <div className="my-32 relative">
       {productData.map((product, index) => (
-        <Product key={index} val={product} />
+        <Product count={index} val={product} mover={mover} />
       ))}
       <div className="absolute top-0 w-full h-full pointer-events-none ">
-        <div className="absolute w-[25rem] h-[15rem]  left-[35%] bg-amber-500">
-          <div className="w-full h-full bg-sky-100 absolute ]"></div>
-        </div>
+        <motion.div
+          initial={{ y: pos, x: "-50%" }}
+          animate={{ y: pos + `rem` }}
+          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+          className="absolute w-[28rem] h-[20rem]  left-[44%] overflow-hidden "
+        >
+          <motion.div
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            animate={{ y: -pos + `rem` }}
+            className="w-full h-full bg-sky-100  ]"
+          ></motion.div>
+          <motion.div
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            animate={{ y: -pos + `rem` }}
+            className="w-full h-full bg-sky-200  ]"
+          ></motion.div>
+          <motion.div
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            animate={{ y: -pos + `rem` }}
+            className="w-full h-full bg-sky-300  ]"
+          ></motion.div>
+          <motion.div
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            animate={{ y: -pos + `rem` }}
+            className="w-full h-full bg-sky-400  ]"
+          ></motion.div>
+        </motion.div>
       </div>
     </div>
   );
