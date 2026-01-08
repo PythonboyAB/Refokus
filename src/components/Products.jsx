@@ -55,26 +55,67 @@ const Products = () => {
           transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
           className="absolute w-[28rem] h-[20rem]  left-[44%] overflow-hidden "
         >
+          <video
+            autoPlay
+            muted
+            loop
+            className="h-full w-full"
+            src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/arqitel-169.webm"
+          ></video>
           <motion.div
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             animate={{ y: -pos + `rem` }}
-            className="w-full h-full bg-sky-100  ]"
-          ></motion.div>
+            className="w-full h-full  ]"
+          >
+            <video
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/cula-169.webm"
+              className="h-full w-full"
+              autoPlay
+              loop
+              muted
+            ></video>
+          </motion.div>
           <motion.div
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             animate={{ y: -pos + `rem` }}
-            className="w-full h-full bg-sky-200  ]"
-          ></motion.div>
+            className="w-full h-full ]"
+          >
+            <video
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/layoutland-169.webm"
+              loop
+              autoPlay
+              muted
+              className="h-full"
+            ></video>
+          </motion.div>
           <motion.div
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             animate={{ y: -pos + `rem` }}
-            className="w-full h-full bg-sky-300  ]"
-          ></motion.div>
+            className="w-full h-full ]"
+          >
+            {" "}
+            <video
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/arqitel-169.webm"
+              loop
+              autoPlay
+              muted
+              className="h-full"
+            ></video>
+          </motion.div>
           <motion.div
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             animate={{ y: -pos + `rem` }}
-            className="w-full h-full bg-sky-400  ]"
-          ></motion.div>
+            className="w-full h-full  ]"
+          >
+            {" "}
+            <video
+              autoPlay
+              muted
+              loop
+              className="h-full w-full"
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/arqitel-169.webm"
+            ></video>
+          </motion.div>
         </motion.div>
       </div>
     </div>

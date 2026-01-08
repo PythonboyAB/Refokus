@@ -1,5 +1,6 @@
 import React from "react";
 import Stripe from "./Stripe";
+import airbnb from "../assets/crazy.png";
 
 const Stripes = () => {
   var data = [
@@ -8,7 +9,7 @@ const Stripes = () => {
       number: 2,
     },
     {
-      url: "https://www.cssdesignawards.com/imgs/content/2025/red-collar-logo.svg",
+      url: airbnb,
       number: 2,
     },
     {
