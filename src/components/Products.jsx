@@ -46,7 +46,7 @@ const Products = () => {
   return (
     <div className="my-32 relative">
       {productData.map((product, index) => (
-        <Product count={index} val={product} mover={mover} />
+        <Product key={index} count={index} val={product} mover={mover} />
       ))}
       <div className="absolute top-0 w-full h-full pointer-events-none ">
         <motion.div

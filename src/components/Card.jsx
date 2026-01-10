@@ -2,7 +2,7 @@ import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { motion } from "framer-motion";
 
-const Card = ({ width, start, para, hover = "none" }) => {
+const Card = ({ start, para, hover, width }) => {
   return (
     <motion.div
       whileHover={{
