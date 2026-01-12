@@ -3,7 +3,7 @@ import Stripe from "./Stripe";
 import airbnb from "../assets/crazy.png";
 
 const Stripes = () => {
-  var data = [
+  const data = [
     {
       url: "https://www.cssdesignawards.com/imgs/content/2025/red-collar-logo.svg",
       number: 2,
@@ -31,7 +31,7 @@ const Stripes = () => {
   ];
 
   return (
-    <div className="flex items-center justify-between mt-20">
+    <div className="flex items-center mt-20">
       {data.map((elem, index) => (
         <Stripe key={index} val={elem} />
       ))}
